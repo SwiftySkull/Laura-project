@@ -1,0 +1,231 @@
+@use 'src/styles/_vars';
+
+#blog{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-y: hidden;
+  padding-top: 70px;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
+  @media (max-width: vars.$width) {
+    height: 110vh;
+    overflow: visible;
+  }
+
+  h1{
+    font-size: 50px;
+    color: vars.$mainColor;
+    margin-bottom: 500px;
+    font-weight: bold;
+    
+    @media (max-width: vars.$width) {
+      font-size: 20px;
+      position: absolute;
+      top: 1.5rem;
+    }
+  }
+
+  .arrow{
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    
+
+    @media (max-width: vars.$width) {
+      display: none;
+    }
+
+    &.arrow-left{
+      left: 60px;
+      transform: rotateY(180deg);
+    }
+
+    &.arrow-right{
+      right: 60px;
+    }
+  }
+
+  .slider{
+    height: 350px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease-out;
+
+    @media (max-width: vars.$width) {
+      display: block;
+      flex-direction: column;
+      justify-content: center;
+      top: 60px;
+      width: 100%;
+    }
+
+    .container{
+      width: 97vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: vars.$width) {
+        height: unset;
+        width: 100%;
+      }
+
+      .item{
+        width: 700px;
+        height: 100%;
+        background-color: vars.$secondColor;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: vars.$width) {
+          width: 400px;
+          height: 250px;
+          margin: 15px 0;
+          flex-direction: column-reverse;
+          overflow: hidden;
+        }
+
+        @media (min-width: vars.$width) {
+          width: 70%;
+          height: 290px;
+        }
+
+        @media (min-width: 950px) {
+          width: 700px;
+          height: 100%;
+        }
+
+        .left {
+          flex: 4;
+          height: 80%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          @media (max-width: vars.$width) {
+            width: 100%;
+            text-align: center;
+          }
+
+          .leftContainer{
+            color: white;
+            width: 90%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .imgContainer{
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: rgb(240, 166, 139);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              @media (max-width: vars.$width) {
+                width: 20px;
+                height: 20px;
+                display: none;
+              }
+
+              img{
+                width: 25px;
+
+                @media (max-width: vars.$width) {
+                  width: 15px;
+                }
+              }
+            }
+            h2{
+              font-size: 20px;
+
+              @media (max-width: vars.$width) {
+                font-size: 12px;
+              }
+            }
+
+            p{
+              font-size: 13px;
+
+              @media (max-width: vars.$width) {
+                display: none;
+              }
+            }
+
+            button {
+              background-color: vars.$mainColor;
+              border-radius: 10px;
+              width: 150px;
+              height: 30px;
+              color: white;
+              border: none;
+              font-weight: 400;
+              cursor: pointer;
+              opacity: 0.9;
+              margin-top: 10px;
+              &:hover {
+                background-color: grey;
+              }
+
+              @media (max-width: vars.$width) {
+                width: fit-content;
+                height: fit-content;
+                padding: 0.2rem 0.5rem;
+              }
+            }
+
+            a {
+              text-decoration: none;
+              color: inherit;
+            }
+
+            span{
+              font-size: 12px;
+              font-weight: 600;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+
+            .work-link {
+              &:hover {
+                background-color: vars.$secondColor;
+              }
+            }
+          }
+        }
+      
+        .right {
+          flex: 8;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+
+          img{
+            width: 400px;
+
+            @media (min-width: vars.$width) {
+              width: 80%;
+            }
+  
+            @media (min-width: 950px) {
+              width: 400px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

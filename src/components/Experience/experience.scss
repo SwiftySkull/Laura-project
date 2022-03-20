@@ -1,0 +1,85 @@
+@use 'src/styles/_vars';
+
+#experiences{
+  background-color: vars.$secondColor;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-x: hidden;
+  padding-top: 70px;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
+  h1{
+    font-size: 50px;
+    height: 4rem;
+    color: vars.$mainColor;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+
+
+    @media (max-width: vars.$width) {
+      font-size: 20px;
+    }
+  }
+
+  .container {
+    h3 {
+      padding-top: 0.25em;
+      margin-bottom: 0.30em;
+    }
+  
+  
+    .vertical-timeline-element-title{
+      color: vars.$mainColor;
+    
+    }
+    .vertical-timeline-element-subtitle {
+      font-style: italic;
+      font-weight: 300;
+    }
+  
+    .vertical-timeline-element-content {
+      box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25),
+        0 0.4em 1.25em 0 rgba(0, 0, 0, 0.15) !important;
+      padding: 2em 3em !important;
+      
+    }
+  
+    .date {
+      color: rgb(201, 251, 255);
+      font-size: 1.5rem;
+    }
+  
+    #description {
+      margin: 1.5em 0 2em 0;
+      font-weight: 300;
+    }
+  
+  
+  
+    .link-button {
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      color: white;
+      background-color: vars.$secondColor;
+
+      &:hover {
+        background-color: vars.$mainColor;
+      }
+    }
+  
+    @media only screen and (max-width: 1700px) {
+      .vertical-timeline-element-date {
+        display: block !important;
+        float: none !important;
+        color: rgb(44, 44, 44);
+        margin-top: 1.5em;
+      }
+    }
+  }
+}

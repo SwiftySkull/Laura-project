@@ -1,0 +1,52 @@
+@use 'src/styles/_vars';
+
+.app {
+  min-height: 100vh;
+  height: 100%;
+  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
+  position: relative;
+  
+  .sections{
+    width: 100%;
+    //height: calc(100vh - 70px);
+    min-height: 100vh;
+    background-color: lightsalmon;
+    position: absolute;
+    // top: 70px;
+    scroll-behavior: smooth;
+    // Setting up instant scrolling
+    scroll-snap-type: y mandatory;
+    // for firefox
+    scrollbar-width: none;
+    // Others browser
+    &::-webkit-scrollbar{
+      display: none;
+    }
+
+    > *:not(:nth-child(2)) {
+      width: 100%;
+      // height: calc(100vh + 70px);
+      height: 100vh;
+      // Setting up instant scrolling
+      scroll-snap-align: start;
+    }
+
+    >:nth-child(2) {
+      width: 100%;
+      // height: calc(100vh + 70px);
+      min-height: 100vh;
+      height: 100%;
+      // Setting up instant scrolling
+      scroll-snap-align: start;
+    }
+
+    >:nth-child(3) {
+      width: 100%;
+      // height: calc(100vh + 70px);
+      height: 100vh;
+      // Setting up instant scrolling
+      scroll-snap-align: start;
+    }
+  }
+}
